@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    margin: 0;
+    padding: 30px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.add-form input,
+.add-form textarea {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.add-form button {
+    padding: 12px;
+    background: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.todos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.todo-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.completed {
+    opacity: 0.6;
+    text-decoration: line-through;
+}
+
+.todo-title {
+    font-weight: bold;
+}
+
+.todo-description {
+    color: #555;
+    margin-top: 5px;
+}
+
+.todo-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.btn {
+    padding: 8px 12px;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.btn-complete {
+    background: green;
+}
+
+.btn-edit {
+    background: orange;
+}
+
+.btn-delete {
+    background: red;
+}
+
+.api-info {
+    margin-top: 25px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.empty {
+    text-align: center;
+    color: #888;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+}
+
+.edit-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.cancel-btn {
+    padding: 12px;
+    background: gray;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+}

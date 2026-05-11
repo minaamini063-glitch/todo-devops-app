@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>DevOps Todo App</h1>
+
+<form method="POST" action="/add" class="add-form">
+    <input type="text" name="title" placeholder="Task title" required>
+    <textarea name="description" placeholder="Description (optional)"></textarea>
+    <button type="submit">Add Task</button>
+</form>
+
+<div class="todos">
+    {% for todo in todos %}
+    <div class="todo-item {% if todo.completed %}completed{% endif %}">
+        <div class="todo-content">
+            <div class="todo-title">{{ todo.title }}</div>
+            {% if todo.description %}
+            <div class="todo-description">{{ todo.description }}</div>
+            {% endif %}
+        </div>
+
+        <div class="todo-actions">
+            <a href="/complete/{{ todo.id }}" class="btn btn-complete">
+                {% if todo.completed %}Undo{% else %}Complete{% endif %}
+            </a>
+            <a href="/edit/{{ todo.id }}" class="btn btn-edit">Edit</a>
+            <a href="/delete/{{ todo.id }}" class="btn btn-delete" onclick="return confirm('Delete this task?')">Delete</a>
+        </div>
+    </div>
+    {% else %}
+    <p class="empty">No tasks yet. Add one above!</p>
+    {% endfor %}
+</div>
+
+<div class="api-info">
+    <strong>API Endpoint:</strong> <code>GET /api/todos</code> - Returns all tasks as JSON
+</div>
+{% endblock %}
